@@ -448,6 +448,14 @@ The default text of a pad.
 |-----|--------|
 |String|`Welcome to etherpad!`|
 
+#### suppress_errors_in_pad_text
+
+Ability to suppress error in the pad text
+
+|Type |Default |
+|-----|--------|
+|Boolean|`false`|
+
 #### logconfig_file
 
 Enable/disable logging to a file.

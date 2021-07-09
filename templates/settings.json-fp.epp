@@ -14,7 +14,7 @@
 
   // favicon default name
   // alternatively, set up a fully specified Url to your own favicon
-  "favicon": "favicon.ico",
+  "favicon": "<%= $etherpad::favicon -%>",
 
   //IP and port which etherpad should bind at
   <%- if $etherpad::ip { -%>
@@ -69,7 +69,7 @@
   "editOnly" : <%= $etherpad::edit_only -%>,
 
   /* Users, who have a valid session, automatically get granted access to password protected pads */
-  "sessionNoPassword" : false,
+  "sessionNoPassword" : <%= $etherpad::session_no_password -%>,
 
   /* if true, all css & js will be minified before sending to the client. This will improve the loading performance massivly,
      but makes it impossible to debug the javascript/css */
@@ -88,7 +88,11 @@
   <%- } -%>
   /* This is the absolute path to the soffice executable. Setting it to null, disables LibreOffice exporting.
      LibreOffice can be used in lieu of Abiword to export pads */
+  <%- if $etherpad::soffice { -%>
+  "soffice" : "<%= $etherpad::soffice_path -%>",
+  <%- } else { -%>
   "soffice" : null,
+  <%- } -%>
 
   /* This is the path to the Tidy executable. Setting it to null, disables Tidy.
      Tidy is used to improve the quality of exported pads*/

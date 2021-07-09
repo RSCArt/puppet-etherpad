@@ -8,7 +8,7 @@ class etherpad (
   # General
   Etherpad::Ensure $ensure                   = 'present', # This should be a pattern, but right now that's too long
   String $service_name                       = 'etherpad',
-  Enum['running', 'stopped'] $service_ensure = 'running', # again, should be an enum…
+  Enum['running', 'stopped'] $service_ensure = 'running',
   # what if the fact doesn't exist (yet) or is b0rked? use Optional.
   Optional[String] $service_provider         = $::service_provider,
   Boolean $manage_user                       = true,
@@ -48,6 +48,10 @@ class etherpad (
   Boolean $use_default_ldapauth                  = true,
   Optional[String] $pad_title                    = undef,
   String $default_pad_text                       = 'Welcome to etherpad!',
+  Optional[String] $favicon                      = "favicon.ico",
+  Optional[Boolean] $session_no_password         = false,
+  Optional[Boolean] $soffice                     = false,
+  Optional[String] $soffice_path                 = "null",
   Optional[Boolean] $suppress_errors_in_pad_text = false,
 
   # Users
