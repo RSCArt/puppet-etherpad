@@ -60,7 +60,7 @@
   "padOptions": <%= to_json_pretty($etherpad::_real_padoptions) %>,
 
   /* Should we suppress errors from being visible in the default Pad Text? */
-  "suppressErrorsInPadText" : false,
+  "suppressErrorsInPadText" : <%= $etherpad::suppress_errors_in_pad_text -%>,
 
   /* Users must have a session to access pads. This effectively allows only group pads to be accessed. */
   "requireSession" : <%= $etherpad::require_session -%>,
@@ -113,4 +113,3 @@
 
   /* Privacy: disable IP logging */
   "disableIPlogging" : false,
-

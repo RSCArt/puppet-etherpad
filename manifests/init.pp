@@ -38,16 +38,17 @@ class etherpad (
   Boolean $minify  = true,
 
   # Config
-  Etherpad::Ldapauth $ldapauth      = {},
-  Etherpad::Buttonlink $button_link = {},
-  Etherpad::Mypads $mypads          = {},
-  Boolean $require_session          = false,
-  Boolean $edit_only                = false,
-  Boolean $require_authentication   = false,
-  Boolean $require_authorization    = false,
-  Boolean $use_default_ldapauth     = true,
-  Optional[String]  $pad_title      = undef,
-  String $default_pad_text          = 'Welcome to etherpad!',
+  Etherpad::Ldapauth $ldapauth                   = {},
+  Etherpad::Buttonlink $button_link              = {},
+  Etherpad::Mypads $mypads                       = {},
+  Boolean $require_session                       = false,
+  Boolean $edit_only                             = false,
+  Boolean $require_authentication                = false,
+  Boolean $require_authorization                 = false,
+  Boolean $use_default_ldapauth                  = true,
+  Optional[String] $pad_title                    = undef,
+  String $default_pad_text                       = 'Welcome to etherpad!',
+  Optional[Boolean] $suppress_errors_in_pad_text = false,
 
   # Users
   Optional[Hash] $users           = undef,
