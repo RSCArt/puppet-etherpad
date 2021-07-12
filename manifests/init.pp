@@ -88,7 +88,7 @@ class etherpad (
     rtl              => false,
     alwaysShowChat   => false,
     chatAndUsers     => false,
-    lang             => 'en-gb',
+    lang             => 'en-ca',
   }
   #Merged values provides by user and default values
   $_real_padoptions = merge($default_padoptions, $padoptions)
